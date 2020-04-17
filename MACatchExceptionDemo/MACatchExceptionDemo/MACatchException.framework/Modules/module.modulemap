@@ -1,0 +1,6 @@
+framework module MACatchException {
+  umbrella header "MACatchException.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,72 @@
+//
+//  PrefixHeader.pch
+//  MACatchException
+//
+//  Created by ma on 2019/12/5.
+//  Copyright © 2019 com.ma. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+/*
+
+ note:
+ 对NSMutableArray+MACatch.m文件加MRC编译标记（-fno-objc-arc），避免[UIKeyboardLayoutStar release] bug
+ 
+ */
+
+
+#ifdef DEBUG
+
+#define  MACatchLog(...) NSLog(@"%@",[NSString stringWithFormat:__VA_ARGS__])
+
+#else
+
+#define MACatchLog(...)
+#endif
+
+
+#define MACatchDefaultReturnNil  @"MACatch default is to return nil to avoid crash."
+#define MACatchDefaultIgnore     @"MACatch default is to ignore this operation to avoid crash."
+
+#define MACatchSeparator         @"================================================================"
+#define MACatchSeparatorWithFlag @"========================AvoidCrash Log=========================="
+
+ #import<objc/runtime.h>
+
+#import "MACatch.h"
+#import "MACatchProxy.h"
+
+// DataObject
+#import "NSObject+MACatch.h"
+
+#import "NSArray+MACatch.h"
+#import "NSMutableArray+MACatch.h"
+
+#import "NSDictionary+MACatch.h"
+#import "NSMutableDictionary+MACatch.h"
+
+#import "NSString+MACatch.h"
+#import "NSMutableString+MACatch.h"
+
+#import "NSAttributedString+MACatch.h"
+#import "NSMutableAttributedString+MACatch.h"
+
+
+// UIView
+#import "UIView+MACatch.h"
+
+
+// NSThread
+#import "NSThread+MACatch.h"
+
+
+// UIApplication
+#import "UIApplication+MACatch.h"
+
+
+#endif /* PrefixHeader_pch */
