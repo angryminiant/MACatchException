@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   #
 
   spec.name         = "MACatchException"
-  spec.version      = "1.0"
+  spec.version      = "0.0.1"
   spec.summary      = "MACatchException,this is my first lib on cocoapods."
 
   # This description is used to generate tags and improve search results.
@@ -25,7 +25,8 @@ Pod::Spec.new do |spec|
   #   * Write the description between the DESC delimiters below.
   #   * Finally, don't worry about the indent, CocoaPods strips it!
   spec.description  = <<-DESC
-                    this lib can avoid common crashes.
+                    this lib use runtime to exchange target methods,
+                    then can avoid common crashes.
                    DESC
 
   spec.homepage     = "http://EXAMPLE/repositoryDemo"
@@ -80,7 +81,7 @@ Pod::Spec.new do |spec|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  spec.source       = { :git => "https://github.com/angryminiant/MACatchException.git", :tag => "#{1.0}" }
+  spec.source       = { :git => "https://github.com/angryminiant/MACatchException.git", :tag => "#{s.version}" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
